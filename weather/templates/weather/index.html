@@ -20,7 +20,7 @@
 
         {% if weather %}
         <h2>Погода в {{ weather.city }}</h2>
-        <h2>Температура: {{ weather.current_weather.temperature }}</h2>
+        <h2>Температура: {{ weather.current_weather.temperature|default:"N/A" }}°C</h2>
         {% endif %}
     </div>
   </body>
