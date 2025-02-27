@@ -14,10 +14,14 @@
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Нажать</button>
         </form>
-{% if weather %}
+        {% if not weather %}
+        <h2>{{ error_mes }}</h2>
+        {% endif %}
+
+        {% if weather %}
         <h2>Погода в {{ weather.city }}</h2>
         <h2>Температура: {{ weather.current_weather.temperature }}</h2>
-{% endif %}
+        {% endif %}
     </div>
   </body>
 </html>
