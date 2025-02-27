@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Нажать</button>
+        </form>
+{% if weather %}
+        <h2>Погода в {{ weather.city }}</h2>
+        <h2>Температура: {{ weather.current_weather.temperature }}</h2>
+{% endif %}
+    </div>
+  </body>
+</html>
