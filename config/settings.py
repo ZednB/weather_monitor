@@ -129,4 +129,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 WEATHER_API = '7e22aef6494a47e33f85623c661fed04'
 
-
+CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": 'redis://127.0.0.1:6379',
+        }
+    }
